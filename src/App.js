@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Search from './components/search/Search';
+import SearchCity from './components/Search/SeachCity';
 
 function App() {
   return (
     <div className="App">
-      <Search />
+      <SearchCity />
     </div>
   );
 }
