@@ -17,7 +17,7 @@ const SearchCity = ({ onSearchChange }) => {
             return {
 
               value: `${city.latitude} ${city.longitude}`,
-              label: `${city.name} City in ${city.region}, ${city.countryCode}`
+              label: `${city.name} ${city.region}, ${city.countryCode}`
             };
           }),
         };
