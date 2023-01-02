@@ -12,7 +12,7 @@ function App() {
 
   const handleOnSearchChange = (searchData) => {
     // search here for the API data
-    console.log(searchData); // => this has lat and lon...
+ //searchData has lat and lon...
     const [lat, lon] = searchData.value.split(" ");
     const currentWeatherFetch = fetch(
       `${OPENWEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${OPENWEATHER_API_KEY}&units=imperial`
@@ -22,7 +22,9 @@ function App() {
     );
 
     Promise.all([currentWeatherFetch, forecastFetch]).then(async (res) => {
+      // first set of data from fetch
       const weatherRes = await res[0].json();
+      //second set of data from fetch
       const forecastRes = await res[1].json();
 
       setCurrWeather({city: searchData.label, ...weatherRes})
@@ -33,8 +35,8 @@ function App() {
     })
   };
 
-  console.log(currWeather)
-  console.log(forecast)
+
+
 
   return (
     <div className="container">
